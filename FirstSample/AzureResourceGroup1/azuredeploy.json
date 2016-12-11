@@ -1,0 +1,463 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    
+        "virtualMachineScaleSets_front_adminPassword": {
+            "defaultValue": "Passw0rd",
+            "type": "string"
+        },
+    "virtualMachineScaleSets_front_name": {
+      "defaultValue": "front",
+      "type": "string"
+    },
+        "loadBalancers_LB_sf2julee_front_name": {
+            "defaultValue": "LB-sf2julee-front",
+            "type": "string"
+        },
+        "publicIPAddresses_LBIP_sf2julee_0_name": {
+            "defaultValue": "LBIP-sf2julee-0",
+            "type": "string"
+        },
+        "virtualNetworks_VNet_sf2julee_name": {
+            "defaultValue": "VNet-sf2julee",
+            "type": "string"
+        },
+        "clusters_sf2julee_name": {
+            "defaultValue": "sf2julee",
+            "type": "string"
+        },
+        "storageAccounts_6ukprxfbqj3sy100_name": {
+            "defaultValue": "6ukprxfbqj3sy100",
+            "type": "string"
+        },
+        "storageAccounts_6ukprxfbqj3sy101_name": {
+            "defaultValue": "6ukprxfbqj3sy101",
+            "type": "string"
+        },
+        "storageAccounts_6ukprxfbqj3sy102_name": {
+            "defaultValue": "6ukprxfbqj3sy102",
+            "type": "string"
+        },
+        "storageAccounts_6ukprxfbqj3sy103_name": {
+            "defaultValue": "6ukprxfbqj3sy103",
+            "type": "string"
+        },
+        "storageAccounts_6ukprxfbqj3sy104_name": {
+            "defaultValue": "6ukprxfbqj3sy104",
+            "type": "string"
+        },
+        "storageAccounts_sfdgsf2julee5258_name": {
+            "defaultValue": "sfdgsf2julee5258",
+            "type": "string"
+        },
+        "storageAccounts_sflogssf2julee6579_name": {
+            "defaultValue": "sflogssf2julee6579",
+            "type": "string"
+        },
+        "loadBalancers_LB_sf2julee_front_id": {
+            "defaultValue": "/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Network/loadBalancers/LB-sf2julee-front/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "string"
+        },
+        "loadBalancers_LB_sf2julee_front_id_1": {
+            "defaultValue": "/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Network/loadBalancers/LB-sf2julee-front/backendAddressPools/LoadBalancerBEAddressPool",
+            "type": "string"
+        },
+        "loadBalancers_LB_sf2julee_front_id_2": {
+            "defaultValue": "/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Network/loadBalancers/LB-sf2julee-front/probes/FabricGatewayProbe",
+            "type": "string"
+        },
+        "loadBalancers_LB_sf2julee_front_id_3": {
+            "defaultValue": "/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Network/loadBalancers/LB-sf2julee-front/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "string"
+        },
+        "loadBalancers_LB_sf2julee_front_id_4": {
+            "defaultValue": "/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Network/loadBalancers/LB-sf2julee-front/backendAddressPools/LoadBalancerBEAddressPool",
+            "type": "string"
+        },
+        "loadBalancers_LB_sf2julee_front_id_5": {
+            "defaultValue": "/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Network/loadBalancers/LB-sf2julee-front/probes/FabricHttpGatewayProbe",
+            "type": "string"
+        },
+        "loadBalancers_LB_sf2julee_front_id_6": {
+            "defaultValue": "/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Network/loadBalancers/LB-sf2julee-front/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "string"
+        },
+        "loadBalancers_LB_sf2julee_front_id_7": {
+            "defaultValue": "/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Network/loadBalancers/LB-sf2julee-front/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "string"
+        },
+        "loadBalancers_LB_sf2julee_front_id_8": {
+            "defaultValue": "/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Network/loadBalancers/LB-sf2julee-front/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "string"
+        },
+        "loadBalancers_LB_sf2julee_front_id_9": {
+            "defaultValue": "/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Network/loadBalancers/LB-sf2julee-front/frontendIPConfigurations/LoadBalancerIPConfig",
+            "type": "string"
+        }
+    
+
+  },
+    "variables": {
+
+    },
+  "resources": [
+    {
+      "comments": "Generalized from resource: '/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Compute/virtualMachineScaleSets/front'.",
+      "type": "Microsoft.Compute/virtualMachineScaleSets",
+      "sku": {
+        "name": "Standard_A0",
+        "tier": "Standard",
+        "capacity": 3
+      },
+      "name": "[parameters('virtualMachineScaleSets_front_name')]",
+      "apiVersion": "2015-06-15",
+      "location": "japanwest",
+      "tags": {
+        "resourceType": "Service Fabric",
+        "clusterName": "sf2julee"
+      },
+      "properties": {
+        "upgradePolicy": {
+          "mode": "Automatic"
+        },
+        "virtualMachineProfile": {
+          "osProfile": {
+            "computerNamePrefix": "[parameters('virtualMachineScaleSets_front_name')]",
+            "adminUsername": "julee",
+            "windowsConfiguration": {
+              "provisionVMAgent": true,
+              "enableAutomaticUpdates": true
+            },
+            "secrets": [],
+            "adminPassword": "[parameters('virtualMachineScaleSets_front_adminPassword')]"
+          },
+          "storageProfile": {
+            "osDisk": {
+              "vhdContainers": [
+                "https://6ukprxfbqj3sy100.blob.core.windows.net/vhds",
+                "https://6ukprxfbqj3sy101.blob.core.windows.net/vhds",
+                "https://6ukprxfbqj3sy102.blob.core.windows.net/vhds",
+                "https://6ukprxfbqj3sy103.blob.core.windows.net/vhds",
+                "https://6ukprxfbqj3sy104.blob.core.windows.net/vhds"
+              ],
+              "name": "vmssosdisk",
+              "createOption": "FromImage",
+              "caching": "ReadOnly"
+            },
+            "imageReference": {
+              "publisher": "MicrosoftWindowsServer",
+              "offer": "WindowsServer",
+              "sku": "2012-R2-Datacenter",
+              "version": "latest"
+            }
+          },
+          "networkProfile": {
+            "networkInterfaceConfigurations": [
+              {
+                "name": "NIC-sf2julee-0",
+                "properties": {
+                  "primary": true,
+                  "ipConfigurations": [
+                    {
+                      "name": "NIC-sf2julee-0",
+                      "properties": {
+                        "subnet": {
+                          "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_VNet_sf2julee_name')), '/subnets/Subnet-0')]"
+                        },
+                        "loadBalancerBackendAddressPools": [
+                          {
+                            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_LB_sf2julee_front_name')), '/backendAddressPools/LoadBalancerBEAddressPool')]"
+                          }
+                        ],
+                        "loadBalancerInboundNatPools": [
+                          {
+                            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_LB_sf2julee_front_name')), '/inboundNatPools/LoadBalancerBEAddressNatPool')]"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "extensionProfile": {
+            "extensions": [
+              {
+                "properties": {
+                  "publisher": "Microsoft.Azure.ServiceFabric",
+                  "type": "ServiceFabricNode",
+                  "typeHandlerVersion": "1.0",
+                  "autoUpgradeMinorVersion": false,
+                  "settings": {
+                    "clusterEndpoint": "https://westjapan.servicefabric.azure.com/runtime/clusters/921dd7e2-32f5-4473-aa08-bc46b81d8a9e",
+                    "nodeTypeRef": "[parameters('virtualMachineScaleSets_front_name')]",
+                    "dataPath": "D:\\\\SvcFab",
+                    "durabilityLevel": "Bronze"
+                  }
+                },
+                "name": "[concat(parameters('virtualMachineScaleSets_front_name'),'_ServiceFabricNode')]"
+              },
+              {
+                "properties": {
+                  "publisher": "Microsoft.Azure.Diagnostics",
+                  "type": "IaaSDiagnostics",
+                  "typeHandlerVersion": "1.5",
+                  "autoUpgradeMinorVersion": true,
+                  "settings": {
+                    "WadCfg": {
+                      "DiagnosticMonitorConfiguration": {
+                        "overallQuotaInMB": "50000",
+                        "EtwProviders": {
+                          "EtwEventSourceProviderConfiguration": [
+                            {
+                              "provider": "Microsoft-ServiceFabric-Actors",
+                              "scheduledTransferKeywordFilter": "1",
+                              "scheduledTransferPeriod": "PT5M",
+                              "DefaultEvents": {
+                                "eventDestination": "ServiceFabricReliableActorEventTable"
+                              }
+                            },
+                            {
+                              "provider": "julee-servicefabric-application-logs",
+                              "scheduledTransferPeriod": "PT1M",
+                              "DefaultEvents": {
+                                "eventDestination": "ETWEventTable"
+                              }
+                            },
+                            {
+                              "provider": "Microsoft-ServiceFabric-Services",
+                              "scheduledTransferPeriod": "PT5M",
+                              "DefaultEvents": {
+                                "eventDestination": "ServiceFabricReliableServiceEventTable"
+                              }
+                            }
+                          ],
+                          "EtwManifestProviderConfiguration": [
+                            {
+                              "provider": "cbd93bc2-71e5-4566-b3a7-595d8eeca6e8",
+                              "scheduledTransferLogLevelFilter": "Information",
+                              "scheduledTransferKeywordFilter": "4611686018427387904",
+                              "scheduledTransferPeriod": "PT5M",
+                              "DefaultEvents": {
+                                "eventDestination": "ServiceFabricSystemEventTable"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "StorageAccount": "sfdgsf2julee5258"
+                  }
+                },
+                "name": "VMDiagnosticsVmExt_vmNodeType0Name"
+              }
+            ]
+          }
+        }
+      },
+      "resources": [],
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_VNet_sf2julee_name'))]",
+        "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_LB_sf2julee_front_name'))]"
+      ]
+    },
+    {
+      "comments": "Generalized from resource: '/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Network/virtualNetworks/VNet-sf2julee'.",
+      "type": "Microsoft.Network/virtualNetworks",
+      "name": "[parameters('virtualNetworks_VNet_sf2julee_name')]",
+      "apiVersion": "2016-03-30",
+      "location": "japanwest",
+      "tags": {
+        "resourceType": "Service Fabric",
+        "clusterName": "sf2julee"
+      },
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.0.0.0/16"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "Subnet-0",
+            "properties": {
+              "addressPrefix": "10.0.0.0/24"
+            }
+          }
+        ]
+      },
+      "resources": [],
+      "dependsOn": []
+    },
+    {
+      "comments": "Generalized from resource: '/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Network/loadBalancers/LB-sf2julee-front'.",
+      "type": "Microsoft.Network/loadBalancers",
+      "name": "[parameters('loadBalancers_LB_sf2julee_front_name')]",
+      "apiVersion": "2016-03-30",
+      "location": "japanwest",
+      "tags": {
+        "resourceType": "Service Fabric",
+        "clusterName": "sf2julee"
+      },
+      "properties": {
+        "frontendIPConfigurations": [
+          {
+            "name": "LoadBalancerIPConfig",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_LBIP_sf2julee_0_name'))]"
+              }
+            }
+          }
+        ],
+        "backendAddressPools": [
+          {
+            "name": "LoadBalancerBEAddressPool"
+          }
+        ],
+        "loadBalancingRules": [
+          {
+            "name": "LBRule",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[parameters('loadBalancers_LB_sf2julee_front_id')]"
+              },
+              "frontendPort": 19000,
+              "backendPort": 19000,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 5,
+              "protocol": "Tcp",
+              "loadDistribution": "Default",
+              "backendAddressPool": {
+                "id": "[parameters('loadBalancers_LB_sf2julee_front_id_1')]"
+              },
+              "probe": {
+                "id": "[parameters('loadBalancers_LB_sf2julee_front_id_2')]"
+              }
+            }
+          },
+          {
+            "name": "LBHttpRule",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[parameters('loadBalancers_LB_sf2julee_front_id_3')]"
+              },
+              "frontendPort": 19080,
+              "backendPort": 19080,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 5,
+              "protocol": "Tcp",
+              "loadDistribution": "Default",
+              "backendAddressPool": {
+                "id": "[parameters('loadBalancers_LB_sf2julee_front_id_4')]"
+              },
+              "probe": {
+                "id": "[parameters('loadBalancers_LB_sf2julee_front_id_5')]"
+              }
+            }
+          }
+        ],
+        "probes": [
+          {
+            "name": "FabricGatewayProbe",
+            "properties": {
+              "protocol": "Tcp",
+              "port": 19000,
+              "intervalInSeconds": 5,
+              "numberOfProbes": 2
+            }
+          },
+          {
+            "name": "FabricHttpGatewayProbe",
+            "properties": {
+              "protocol": "Tcp",
+              "port": 19080,
+              "intervalInSeconds": 5,
+              "numberOfProbes": 2
+            }
+          }
+        ],
+        "inboundNatRules": [
+          {
+            "name": "LoadBalancerBEAddressNatPool.0",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[parameters('loadBalancers_LB_sf2julee_front_id_6')]"
+              },
+              "frontendPort": 3389,
+              "backendPort": 3389,
+              "protocol": "Tcp"
+            }
+          },
+          {
+            "name": "LoadBalancerBEAddressNatPool.1",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[parameters('loadBalancers_LB_sf2julee_front_id_7')]"
+              },
+              "frontendPort": 3390,
+              "backendPort": 3389,
+              "protocol": "Tcp"
+            }
+          },
+          {
+            "name": "LoadBalancerBEAddressNatPool.2",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[parameters('loadBalancers_LB_sf2julee_front_id_8')]"
+              },
+              "frontendPort": 3391,
+              "backendPort": 3389,
+              "protocol": "Tcp"
+            }
+          }
+        ],
+        "outboundNatRules": [],
+        "inboundNatPools": [
+          {
+            "name": "LoadBalancerBEAddressNatPool",
+            "properties": {
+              "frontendPortRangeStart": 3389,
+              "frontendPortRangeEnd": 4500,
+              "backendPort": 3389,
+              "protocol": "Tcp",
+              "frontendIPConfiguration": {
+                "id": "[parameters('loadBalancers_LB_sf2julee_front_id_9')]"
+              }
+            }
+          }
+        ]
+      },
+      "resources": [],
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_LBIP_sf2julee_0_name'))]"
+      ]
+    },
+    {
+      "comments": "Generalized from resource: '/subscriptions/51e4c1ab-f0d2-4f71-9e86-8e65e3234941/resourceGroups/sf2julee/providers/Microsoft.Network/publicIPAddresses/LBIP-sf2julee-0'.",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[parameters('publicIPAddresses_LBIP_sf2julee_0_name')]",
+      "apiVersion": "2016-03-30",
+      "location": "japanwest",
+      "tags": {
+        "resourceType": "Service Fabric",
+        "clusterName": "sf2julee"
+      },
+      "properties": {
+        "publicIPAllocationMethod": "Dynamic",
+        "idleTimeoutInMinutes": 4,
+        "dnsSettings": {
+          "domainNameLabel": "sf2julee"
+        }
+      },
+      "resources": [],
+      "dependsOn": []
+    }
+  ],
+    "outputs": {
+
+    }
+  }
